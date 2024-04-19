@@ -3,7 +3,7 @@ import random
 import board
 import adafruit_dotstar as dotstar
 
-dots = dots = dotstar.DotStar(board.SCK, board.MOSI, 30, brightness=0.2)
+dots = dotstar.DotStar(board.D6, board.D5, 30, brightness=0.2)
 
 def random_color():
     return random.randrange(0, 7) * 32
