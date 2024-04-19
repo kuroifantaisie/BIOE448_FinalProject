@@ -1,6 +1,6 @@
 import time
 import random
-import board
+from board import board
 import adafruit_dotstar as dotstar
 
 print(dir(board))
