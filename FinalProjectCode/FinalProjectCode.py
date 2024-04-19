@@ -1,9 +1,17 @@
-from gpiozero import LED
 import time
+import random
+import board
+import adafruit_dotstar as dotstar
 
-led_right = LED(10)
-led_left = LED(9)
+def random_color():
+    return random.randrange(0, 7) * 32
 
+
+# MAIN LOOP
+n_dots = len(dots)
 while True:
-    led_right.on()
-    led_left.on()
+    # Fill each dot with a random color
+    for dot in range(n_dots):
+        dots[dot] = (random_color(), random_color(), random_color())
+
+    time.sleep(0.25)
