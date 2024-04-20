@@ -27,10 +27,10 @@ recvdata = 1
 
 # Initialize LED strip
 # Need to change LED strip colors here for warnings
-dots = dotstar.DotStar(board.SCK, board.MOSI, 40, brightness=0.2)
-white_brightness = 100
-red_vec = (white_brightness, 0, 0)
-left_list = [19, 20, 21]
+# dots = dotstar.DotStar(board.SCK, board.MOSI, 40, brightness=0.2)
+# white_brightness = 100
+# red_vec = (white_brightness, 0, 0)
+# left_list = [19, 20, 21]
 
 def do_stuff():
     s = 'DANGER!'
@@ -38,7 +38,6 @@ def do_stuff():
     root.after(100, do_stuff)
 
 root = tk.Tk()
-root.configure(bg="white")
 root.attributes("-alpha", 0.1)
 root.wm_overrideredirect(True)
 root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))
@@ -47,10 +46,5 @@ root.bind("<Button-1>", lambda evt: root.destroy())
 l = tk.Label(text='', font=("Helvetica", 80))
 l.pack(expand=True)
 
-while recvdata == 1:
-   for dot in left_list:
-      dots[dot] = red_vec
-   do_stuff()
-
-
+do_stuff()
 root.mainloop()
