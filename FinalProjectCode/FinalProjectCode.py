@@ -39,12 +39,12 @@ def do_stuff():
 
 root = tk.Tk()
 root.configure(bg="white")
-root.attributes("-transparentcolor", "white")
+root.attributes("-alpha", 0.1)
 root.wm_overrideredirect(True)
 root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))
 root.bind("<Button-1>", lambda evt: root.destroy())
 
-l = tk.Label(bg = "white", text='', font=("Helvetica", 80))
+l = tk.Label(text='', font=("Helvetica", 80))
 l.pack(expand=True)
 
 while recvdata == 1:
