@@ -32,13 +32,6 @@ white_brightness = 100
 red_vec = (white_brightness, 0, 0)
 left_list = [19, 20, 21]
 
-while recvdata == 1:
-   for dot in left_list:
-      dots[dot] = red_vec
-   do_stuff()
-      
-
-
 def do_stuff():
     s = 'DANGER!'
     l.config(text=s, fg='red')
@@ -53,5 +46,11 @@ root.bind("<Button-1>", lambda evt: root.destroy())
 
 l = tk.Label(bg = "white", text='', font=("Helvetica", 80))
 l.pack(expand=True)
+
+while recvdata == 1:
+   for dot in left_list:
+      dots[dot] = red_vec
+   do_stuff()
+
 
 root.mainloop()
