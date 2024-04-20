@@ -5,7 +5,7 @@ import board
 import adafruit_dotstar as dotstar
 import bluetooth 
 
-server_sock=bluetooth.bluetoothsocket(bluetooth.rfcomm) 
+server_sock=bluetooth.BluetoothSocket(bluetooth.RFCOMM) 
 port = 22
 server_sock.bind(("",port)) 
 server_sock.listen(1) 
