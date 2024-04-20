@@ -5,23 +5,17 @@ import board
 import adafruit_dotstar as dotstar
 import bluetooth 
 
-# server_sock=bluetooth.BluetoothSocket(bluetooth.RFCOMM) 
-# port = 22
-# server_sock.bind(("",port)) 
-# server_sock.listen(1) 
-# client_sock,address = server_sock.accept() 
-# print ("Connection made with: ", address) 
-# while True: 
-#     recvdata = client_sock.recv(1024) 
-#     print ("Information Received: %s" % recvdata)
-#     if (recvdata == "Q"): 
-#         print ("Finished.") 
-#         break
-         
-# client_sock.close() 
-# server_sock.close()
+server_sock=bluetooth.bluetoothsocket(bluetooth.rfcomm) 
+port = 22
+server_sock.bind(("",port)) 
+server_sock.listen(1) 
+client_sock,address = server_sock.accept() 
+print ("connection made with: ", address) 
 
-recvdata = 1
+recvdata = client_sock.recv(1024) 
+
+client_sock.close() 
+server_sock.close()
 
 # MAIN LOOP
 
@@ -53,7 +47,7 @@ if recvdata == 1:
     do_stuff()
 else:
     for dot in left_list:
-    dots[dot] = 0
+        dots[dot] = 0
 
 
 root.mainloop()
