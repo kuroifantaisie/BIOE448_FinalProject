@@ -17,21 +17,21 @@ while True:
         print ("Finished.") 
         break
          
-# client_sock.close() 
-# server_sock.close()
+client_sock.close() 
+server_sock.close()
 
-# print(dir(board))
-# dots = dotstar.DotStar(board.SCLK, board.MOSI, 30, brightness=0.2)
+print(dir(board))
+dots = dotstar.DotStar(board.SCK, board.MOSI, 30, brightness=0.2)
 
-# def random_color():
-#     return random.randrange(0, 7) * 32
+def random_color():
+    return random.randrange(0, 7) * 32
 
 
-# # MAIN LOOP
-# n_dots = len(dots)
-# while True:
-#     # Fill each dot with a random color
-#     for dot in range(n_dots):
-#         dots[dot] = (random_color(), random_color(), random_color())
+# MAIN LOOP
+n_dots = len(dots)
+while True:
+    # Fill each dot with a random color
+    for dot in range(n_dots):
+        dots[dot] = (random_color(), random_color(), random_color())
 
-#     time.sleep(0.25)
+    time.sleep(0.25)
