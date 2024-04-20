@@ -51,5 +51,9 @@ if recvdata == 1:
     for dot in left_list:
         dots[dot] = red_vec
     do_stuff()
+else:
+    for dot in left_list:
+    dots[dot] = 0
+
 
 root.mainloop()
